@@ -1,0 +1,280 @@
+:root {
+    --content-max-width: 1400px;
+    --header-nav-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+header {
+    position: relative;
+    height: 80vh;
+}
+
+header img.headerBackgroundImage {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.headerNavigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    background-color: #768d97;
+    box-shadow: 0 0 10px 2px rgb(59, 59, 59);
+
+    transition: 0.2s;
+
+}
+
+.headerNavigation ul {
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerNavigation ul a {
+    text-decoration: none;
+    height: var(--header-nav-height);
+}
+
+.headerNavigation ul li {
+    line-height: var(--header-nav-height);
+    padding: 0px 50px;
+    cursor: pointer;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+
+    display: flex;
+}
+
+.headerNavigation ul li:hover {
+    border-bottom: 4px solid white;
+}
+
+.headerNavigation ul li i {
+    line-height: var(--header-nav-height);
+    font-size: 1.5em;
+    margin-right: 5px;
+}
+
+.menuIcon {
+    position: fixed;
+    top: 20px;
+    right: 50px;
+    font-size: 3em;
+    color: black;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 3;
+}
+
+.authorInfo {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(76, 93, 100, 0.8);
+    text-align: center;
+    color: white;
+}
+
+.authorInfo h1 {
+    font-size: 5em;
+    padding: 20px 0;
+}
+
+.authorInfo h2 {
+    font-size: 3em;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.headerNavigation.active {
+    transition: 0.2s;
+    top: -80px;
+}
+
+/**************************END OF HEADER*********************************/
+
+main {
+    background-color: white;
+    height: 200vh;
+
+    /* position: relative; */
+}
+
+.authorImage {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-image: url(img/authorImage.jpg);
+    border: 4px solid white;
+    border-radius: 50%;
+}
+
+div.about {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 150px;
+    padding-bottom: 20px;
+    border-bottom: 4px solid rgb(59, 59, 59);
+}
+
+div.about p.aboutTitle {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: rgb(59, 59, 59);
+}
+
+div.about p.aboutDescription {
+    font-size: 2em;
+    color: rgb(59, 59, 59);
+}
+
+p.projectsTitle {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 3em;
+    background-color: rgba(76, 93, 100, 0.8);
+    color: white;
+    padding: 30px 0;
+}
+
+/* MOBILE */
+@media (max-width: 750px) {
+    .headerNavigation {
+        left: 100%;
+    }
+
+    .headerNavigation.active {
+        top: 0;
+        transition: 0.4s;
+        left: 0;
+    }
+
+    .headerNavigation ul {
+        flex-direction: column;
+    }
+
+    .headerNavigation ul li {
+        width: 100vw;
+    }
+
+    header {
+        overflow: hidden;
+    }
+
+    header img.headerBackgroundImage {
+        width: auto;
+        height: 100%;
+    }
+
+    .authorInfo h1 {
+        font-size: 3em;
+    }
+
+    .authorInfo h2 {
+        font-size: 2em;
+    }
+
+    .authorImage {
+        width: 150px;
+        height: 150px;
+        background-position: center;
+        background-size: contain;
+    }
+
+    .menuIcon {
+        opacity: 1;
+    }
+
+
+    div.about {
+        width: 85%;
+        padding-top: 100px;
+    }
+
+    div.about p.aboutTitle {
+        font-size: 2.5em;
+    }
+
+    div.about p.aboutDescription {
+        font-size: 1.8em;
+    }
+
+    p.projectsTitle {
+        margin-top: 50px;
+        font-size: 2.5em;
+        padding: 20px 0;
+    }
+}
+
+/* MOBILE HORIZONTAL */
+@media (max-height: 700px) and (orientation: landscape) {
+    :root {
+        --header-nav-height: 50px;
+    }
+
+    header {
+        height: 90vh;
+    }
+
+    header img.headerBackgroundImage {
+        width: 100%;
+    }
+
+    .authorInfo h1 {
+        font-size: 3em;
+        padding: 10px;
+    }
+
+    .authorInfo h2 {
+        font-size: 2em;
+        padding-bottom: 20px;
+    }
+
+    .authorImage {
+        width: 100px;
+        height: 100px;
+        background-position: center;
+        background-size: contain;
+    }
+
+    div.about {
+        width: 85%;
+        padding-top: 100px;
+    }
+
+    div.about p.aboutTitle {
+        font-size: 2.5em;
+    }
+
+    div.about p.aboutDescription {
+        font-size: 1.8em;
+    }
+
+    p.projectsTitle {
+        margin-top: 50px;
+        font-size: 2.5em;
+        padding: 20px 0;
+    }
+}
